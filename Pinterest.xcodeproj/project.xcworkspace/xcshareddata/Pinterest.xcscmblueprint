@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "5943B41C8C40E6C83FF005F3A5E59AF4B329DD0F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "5943B41C8C40E6C83FF005F3A5E59AF4B329DD0F" : 0,
+    "1E378D69E25EF235A08484D5D2C658DBAE5C4E56" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "F658974D-CEC1-40CF-AC47-8504686B82B8",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "5943B41C8C40E6C83FF005F3A5E59AF4B329DD0F" : "Pinterest",
+    "1E378D69E25EF235A08484D5D2C658DBAE5C4E56" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Pinterest",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Pinterest.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/chenkanck\/Tutorials.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1E378D69E25EF235A08484D5D2C658DBAE5C4E56"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/micpringle\/Pinterest.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5943B41C8C40E6C83FF005F3A5E59AF4B329DD0F"
+    }
+  ]
+}

@@ -37,7 +37,7 @@ class PinterestLayout: UICollectionViewLayout {
 
   var numberOfColumns = 2
   var cellPadding: CGFloat = 6.0
-
+  private var cacheHeadAttributes = [UICollectionViewLayoutAttributes]()
   private var cache = [PinterestLayoutAttributes]()
 
   private var contentHeight:CGFloat = 0
@@ -65,6 +65,16 @@ class PinterestLayout: UICollectionViewLayout {
 
         let height = cellPadding * 2 + photoHeight + annotationHeight
 
+        if indexPath.item == 0 {
+          let titleAttributes = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withIndexPath: indexPath)
+          titleAttributes.frame = CGRect(x: 0, y: yOffset[column], width: contentWidth, height: 60)
+          titleAttributes.zIndex = 10
+          cacheHeadAttributes.append(titleAttributes)
+          for col in 0..<yOffset.count {
+            yOffset[col] += 60
+          }
+        }
+
         let frame = CGRect(x: xOffset[column], y: yOffset[column], width: columnWidth, height: height)
         let insetFrame = CGRectInset(frame, cellPadding, cellPadding)
 
@@ -77,6 +87,7 @@ class PinterestLayout: UICollectionViewLayout {
         yOffset[column] = yOffset[column] + height
 
         column = column >= (numberOfColumns - 1) ? 0 : ++column
+
       }
     }
   }
@@ -89,6 +100,12 @@ class PinterestLayout: UICollectionViewLayout {
     var layoutAttributes = [UICollectionViewLayoutAttributes]()
 
     for attributes in cache {
+      if CGRectIntersectsRect(attributes.frame, rect) {
+        layoutAttributes.append(attributes)
+      }
+    }
+
+    for attributes in cacheHeadAttributes {
       if CGRectIntersectsRect(attributes.frame, rect) {
         layoutAttributes.append(attributes)
       }

@@ -25,7 +25,7 @@ class PhotoStreamViewController: UICollectionViewController {
     if let patternImage = UIImage(named: "Pattern") {
       view.backgroundColor = UIColor(patternImage: patternImage)
     }
-
+    collectionView?.registerClass(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header")
     collectionView!.backgroundColor = UIColor.clearColor()
     collectionView!.contentInset = UIEdgeInsets(top: 23, left: 5, bottom: 10, right: 5)
   }
@@ -33,6 +33,9 @@ class PhotoStreamViewController: UICollectionViewController {
 }
 
 extension PhotoStreamViewController {
+  override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    return 2
+  }
 
   override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return photos.count
@@ -43,7 +46,12 @@ extension PhotoStreamViewController {
     cell.photo = photos[indexPath.item]
     return cell
   }
-
+  override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+    let view = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "header", forIndexPath: indexPath)
+    view.backgroundColor = UIColor.whiteColor()
+    return view
+  }
+  
 }
 
 extension PhotoStreamViewController: PinterestLayoutDelegate {
